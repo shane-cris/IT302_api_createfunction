@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --navy: #0e1b3d;
+    --navy-2: #1b2a4a;
+    --gold: #c9a227;
+    --gold-light: #e6c25a;
+    --cream: #f7f4ee;
+    --ink: #232a36;
+    --muted: #6b7280;
+    --shadow: 0 20px 45px -12px rgba(14, 27, 61, 0.35);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    background: var(--cream);
+}
+
+/* ---------- left / hero side ---------- */
+.split {
+    height: 100vh;
+}
+
+.left {
+    position: relative;
+    width: 52%;
+    overflow: hidden;
+}
+
+.left .carousel,
+.left .carousel-inner {
+    height: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.left-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    background: linear-gradient(180deg, rgba(14, 27, 61, 0.05) 0%, rgba(14, 27, 61, 0.35) 55%, rgba(14, 27, 61, 0.82) 100%);
+}
+
+.brand-lockup {
+    padding: 0 64px 72px;
+    color: #fff;
+}
+
+.brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+.brand-lockup::before {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 4px;
+    border-radius: 4px;
+    background: var(--gold-light);
+    margin-bottom: 20px;
+}
+
+.brand-tagline {
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.4px;
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 12px;
+}
+
+/* ---------- right / auth side ---------- */
+.right {
+    width: 48%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-panel {
+    width: 100%;
+    max-width: 480px;
+    padding: 40px;
+}
+
+.auth-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 30px;
+}
+
+.auth-logo img {
+    height: 52px;
+}
+
+.auth-logo span {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--navy);
+}
+
+.auth-card {
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 40px 36px;
+    box-shadow: var(--shadow);
+}
+
+.auth-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    color: var(--navy);
+}
+
+.auth-subtitle {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 6px 0 0;
+}
+
+/* role toggle */
+.role_btn {
+    display: flex;
+    gap: 10px;
+    margin: 24px 0;
+    background: var(--cream);
+    padding: 6px;
+    border-radius: 40px;
+}
+
+.role_btn .btns {
+    flex: 1;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 40px;
+    background: transparent;
+    color: var(--muted);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.role_btn .btns.active {
+    background: var(--navy);
+    color: #fff;
+    box-shadow: 0 8px 18px -8px rgba(14, 27, 61, 0.6);
+}
+
+/* forms */
+.authsection {
+    display: none;
+    animation: screen_animation 0.35s ease;
+}
+
+.authsection.active {
+    display: block;
+}
+
+#sign_up form {
+    animation: screen_animation 0.35s ease;
+}
+
+.form-floating {
+    margin: 14px 0;
+}
+
+.form-control {
+    border-radius: 12px;
+    border: 1px solid #e3e0d9;
+    background: var(--cream);
+    height: 52px;
+}
+
+.form-control:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.18);
+    background: #fff;
+}
+
+.auth_btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg, var(--navy) 0%, var(--navy-2) 100%);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.auth_btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 22px -10px rgba(14, 27, 61, 0.55);
+}
+
+.footer_line {
+    text-align: center;
+    margin: 18px 0 0;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.page_move_btn {
+    color: var(--gold);
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.page_move_btn:hover {
+    color: #a8841b;
+}
+
+/* signup tab */
+#sign_up {
+    display: none;
+}
+
+@keyframes screen_animation {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 900px) {
+    .left {
+        display: none;
+    }
+
+    .right {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-panel {
+        padding: 20px;
+    }
+
+    .auth-card {
+        padding: 28px 20px;
+    }
+}
